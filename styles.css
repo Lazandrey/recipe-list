@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+h1 {
+  padding: 1rem;
+  text-align: center;
+}
+body > p {
+  text-align: center;
+}
+#add-recipe {
+  font-size: 1.5rem;
+}
+#diff-level {
+  font-size: 1.5rem;
+}
+
+#recipes-wrapper {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.header-wrapper {
+  width: 30rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.header-wrapper > div > label {
+  font-size: 1.5rem;
+}
+.recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid gray;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+.recipe h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.recipe > div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.recipe > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe > div > img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.easy {
+  color: green;
+}
+.moderate {
+  color: orange;
+}
+.hard {
+  color: red;
+}

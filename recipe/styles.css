@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+/* h1 {
+  padding: 1rem;
+  text-align: center;
+} */
+body > p {
+  text-align: center;
+}
+#add-recipe {
+  font-size: 1.5rem;
+}
+
+#recipe-wrapper {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#delete-recipe {
+  font-size: 1.5rem;
+  background-color: red;
+  color: white;
+  padding: 0.5rem;
+  width: 50%;
+}
+#edit-recipe {
+  font-size: 1.5rem;
+  background-color: rgb(9, 88, 37);
+  color: white;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+#message {
+  margin: auto;
+  margin-top: 3rem;
+  text-align: center;
+}
+.ok-message {
+  color: green;
+}
+.error-message {
+  color: red;
+}
+.recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.recipe h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.recipe > div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.recipe > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.recipe > div > img {
+  width: 50%;
+  object-fit: cover;
+}
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.easy {
+  color: green;
+}
+.moderate {
+  color: orange;
+}
+.hard {
+  color: red;
+}

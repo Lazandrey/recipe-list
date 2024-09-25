@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+    <title>Receipts list</title>
+  </head>
+  <body>
+    <h1>List of recipes</h1>
+    <div class="header-wrapper">
+      <div>
+        <label for="diff-level">Filter by difficulty:</label>
+        <select name="difficulty" id="diff-level" required>
+          <option value="All">All</option>
+          <option value="Easy">Easy</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+      <p><a id="add-recipe" href="./recipeadd/index.html">Add new recipe</a></p>
+    </div>
+    <div id="recipes-wrapper"></div>
+  </body>
+</html>

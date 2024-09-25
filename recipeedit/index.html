@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./scripts.js"></script>
+    <title>Edit recipe</title>
+  </head>
+  <body>
+    <h1>Edit recipe</h1>
+    <div class="add-recipe">
+      <h2>Title:</h2>
+      <input id="title" placeholder="Title" type="text" />
+      <h2>Description:</h2>
+      <textarea
+        name="description"
+        id="description"
+        rows="5"
+        cols="51"
+      ></textarea>
+      <h2>Directions:</h2>
+      <textarea name="directions" id="directions" rows="5" cols="51"></textarea>
+      <h2>ingredients</h2>
+      <textarea
+        name="ingredients"
+        id="ingredients"
+        rows="5"
+        cols="51"
+      ></textarea>
+      <h2>Select difficulty level:</h2>
+      <select name="difficulty" id="diff-level" required>
+        <option value="Easy">Easy</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Hard">Hard</option>
+      </select>
+      <h2>Image url</h2>
+      <input id="image" placeholder="Image url" type="url" />
+      <button id="submit">Confirm recipe's changes to database</button>
+    </div>
+    <h2 id="ok-message"></h2>
+  </body>
+</html>

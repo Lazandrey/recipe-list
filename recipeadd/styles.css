@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+h1 {
+  padding: 1rem;
+  text-align: center;
+}
+
+.add-recipe {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin: auto;
+}
+.add-recipe input {
+  font-size: 2rem;
+}
+
+#sumnit {
+  width: 100%;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+#ok-message {
+  margin: auto;
+  margin-top: 3rem;
+  text-align: center;
+  color: green;
+  font-size: 3rem;
+}
+#diff-level {
+  width: 80%;
+  font-size: 1.5rem;
+}
