@@ -1,29 +1,16 @@
-const recipesWrapper = document.getElementById("recipes-wrapper");
-const difficulty = document.getElementById("diff-level");
-
-let recipes = [];
-
-difficulty.addEventListener("change", async () => {
-  if (difficulty.value === "All") {
-    recipesWrapper.innerHTML = "";
-    buildRecipesList(recipes);
-  } else {
-    const filteredRecipes = recipes.filter(
-      (recipe) => recipe.difficulty === difficulty.value
-    );
-    recipesWrapper.innerHTML = "";
-    buildRecipesList(filteredRecipes);
+const getRecipeDifficultyCSSClass = (recipe) => {
+  switch (recipe.difficulty) {
+    case "Easy":
+      return "easy";
+      break;
+    case "Moderate":
+      return "moderate";
+      break;
+    case "Hard":
+      return "hard";
+      break;
   }
-});
-
-const getAllRecipes = async () => {
-  const response = await fetch(
-    "https://66ed13e6380821644cdb3c01.mockapi.io/recipe"
-  );
-  const data = await response.json();
-  return data;
 };
-
 const getRecipeHTML = (recipe) => {
   const recipeCard = document.createElement("a");
   const recipeTitle = document.createElement("h2");
@@ -39,18 +26,7 @@ const getRecipeHTML = (recipe) => {
   recipeIngredients.innerText = recipe.ingredients;
   recipeDifficulty.innerText = recipe.difficulty;
   recipeImage.src = recipe.recipe_img;
-
-  switch (recipe.difficulty) {
-    case "Easy":
-      recipeDifficulty.classList.add("easy");
-      break;
-    case "Moderate":
-      recipeDifficulty.classList.add("moderate");
-      break;
-    case "Hard":
-      recipeDifficulty.classList.add("hard");
-      break;
-  }
+  recipeDifficulty.classList.add(getRecipeDifficultyCSSClass(recipe));
 
   recipeCard.classList.add("recipe");
 
@@ -80,16 +56,43 @@ const getRecipeHTML = (recipe) => {
   return recipeCard;
 };
 
-const buildRecipesList = (recipes) => {
+export const buildRecipesList = (recipes, recipesWrapper) => {
   recipes.forEach((recipe) => {
     recipesWrapper.append(getRecipeHTML(recipe));
   });
 };
 
-const startApp = async () => {
-  recipes = await getAllRecipes();
-
-  buildRecipesList(recipes);
+export const buildRecipe = (
+  recipe,
+  title,
+  description,
+  directions,
+  ingredients,
+  difficulty,
+  image
+) => {
+  title.innerText = recipe.title;
+  description.innerText = recipe.description;
+  directions.innerText = recipe.instructions;
+  ingredients.innerText = recipe.ingredients;
+  difficulty.innerText = recipe.difficulty;
+  image.src = recipe.recipe_img;
+  difficulty.classList.add(getRecipeDifficultyCSSClass(recipe));
 };
 
-startApp();
+export const buildRecipeEdit = (
+  recipe,
+  title,
+  description,
+  directions,
+  ingredients,
+  difficulty,
+  image
+) => {
+  title.value = recipe.title;
+  description.value = recipe.description;
+  directions.value = recipe.instructions;
+  ingredients.value = recipe.ingredients;
+  difficulty.value = recipe.difficulty;
+  image.value = recipe.recipe_img;
+};
