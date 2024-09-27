@@ -8,14 +8,13 @@ export const changeDifficultyFilter = async (
   recipes
 ) => {
   if (difficulty.value === "All") {
-    recipesWrapper.innerHTML = "";
     buildRecipesList(recipes, recipesWrapper);
   } else {
     const filteredRecipes = recipes.filter(
       (recipe) => recipe.difficulty === difficulty.value
     );
     console.log(filteredRecipes);
-    recipesWrapper.innerHTML = "";
+
     buildRecipesList(filteredRecipes, recipesWrapper);
   }
 };

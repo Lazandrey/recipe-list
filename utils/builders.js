@@ -57,6 +57,7 @@ const getRecipeHTML = (recipe) => {
 };
 
 export const buildRecipesList = (recipes, recipesWrapper) => {
+  recipesWrapper.innerHTML = "";
   recipes.forEach((recipe) => {
     recipesWrapper.append(getRecipeHTML(recipe));
   });
